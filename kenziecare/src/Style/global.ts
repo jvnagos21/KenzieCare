@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 
-export const  GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -21,6 +21,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	font-family: 'Inter', sans-serif;
 }
 
 article, aside, details, figcaption, figure, 
@@ -44,6 +45,11 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+button {
+	cursor: pointer;
+	border: none;
 }
 
 `
