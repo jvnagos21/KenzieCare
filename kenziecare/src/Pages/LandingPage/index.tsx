@@ -2,7 +2,7 @@ import React from "react";
 import { DivLink, LinkToForm } from "../../Components/DivLinkToForm";
 import { ClickLogo } from "../../Components/Form";
 import { Header } from "../../Components/Header";
-import { BackGroundSecundary, MainLanding } from "../../Components/MainLanding";
+import {  BackGroundSecundary, MainLanding } from "../../Components/MainLanding";
 import {
   DivAnimation,
   DivPrimaryStyled,
@@ -76,7 +76,7 @@ const LandingPage = () => {
               </IconPrimaryStyled>
               <DivHowitWorksStyled>
                 <h2>
-                  <img src="/heading1.svg" alt="icon" /> Como funciona
+                  <img src="/iconTitle.svg" alt="icon" /> Como funciona
                 </h2>
                 <p>
                   As organizações listadas nessa página foram selecionadas como
