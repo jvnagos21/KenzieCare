@@ -4,8 +4,16 @@ import InputForm from "../../Components/Input";
 import { iRegisterFormValues } from "./@types";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Header } from "../../Components/Header";
-import { ButtonFormStyled, ClickLogo, FormStyled, LinkToLandingPage, MainStyled, SpanFormStyled, TitleForm } from "../../Components/Form";
-import { LinkTo } from "../../Components/LinkToRegisterPage";
+import {
+  ButtonFormStyled,
+  ClickLogo,
+  FormStyled,
+  LinkToLandingPage,
+  MainStyled,
+  SpanFormStyled,
+  TitleForm,
+} from "../../Components/Form";
+import { LinkTo } from "../../Components/Links/LinkToRegisterPage";
 import { RegisterSchema } from "./RegisterSchema";
 import { UserContext } from "../../Context/UserContext";
 

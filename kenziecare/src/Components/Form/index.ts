@@ -36,11 +36,13 @@ export const FormStyled = styled.form`
   }
 
   @media (max-width: 375px) {
+    max-width: 375px;
     margin-bottom: 47px;
     border-radius: 0;
   }
 
   @media (max-width: 320px) {
+    max-width: 320px;
     margin-bottom: 35px;
     border-radius: 0;
   }

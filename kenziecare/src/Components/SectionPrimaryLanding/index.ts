@@ -94,7 +94,7 @@ export const DivAnimation = styled.div`
 
   img {
     animation-name: divImgLanding;
-    animation-timing-function: ease-in-out;
+    /* animation-timing-function: ease-in-out; */
     animation-iteration-count: infinite;
     animation-duration: 15s;
     animation-direction: alternate;
