@@ -13,6 +13,7 @@ export interface iUserLoginResponse {
 export interface iUserLogin {
     email: string;
     id: number;
+    is_admin?: boolean;
 }
 
 export interface iUserRegisterResponse {

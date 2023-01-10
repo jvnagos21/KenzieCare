@@ -54,6 +54,7 @@ export const DivAnimation = styled.div`
     top: -135px;
     right: 150px;
     border-radius: 10%;
+    box-shadow: 0 0 20px 0 #f5fffb;
   }
 
   @keyframes divImgLanding {
@@ -92,7 +93,7 @@ export const DivAnimation = styled.div`
 
   img {
     animation-name: divImgLanding;
-    animation-timing-function: ease-in-out;
+    /* animation-timing-function: ease-in-out; */
     animation-iteration-count: infinite;
     animation-duration: 12s;
     animation-direction: alternate;
