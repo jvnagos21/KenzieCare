@@ -1,91 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import { HeaderAdmin } from "../../Components/HeaderAdmin";
+import ModalAdmin from "../../Components/Modal";
+import OngList from "../../Components/OngList";
+import { UserContext } from "../../Context/UserContext";
 import { ContainerAdminDash } from "./style";
 
+
+
 const AdminDash = () => {
+
+   const { showModal, logoutAdmin } = useContext(UserContext) 
   return (
     <div>
       <HeaderAdmin>
-        <div>
+        <div className="containerHeader">
           <img src="/Logo.png" alt="iconLogo" />
-          <button>Logout</button>
+          <button onClick={() => logoutAdmin()}>Logout</button>
         </div>
       </HeaderAdmin>
       <ContainerAdminDash>
-        <ul>
-            <li>
-               <img src="/heading1.svg" alt="" />
-               <h2>nome da ong</h2>
-               <p>Estado da ong</p>
-               <span>Area de atuação</span>
-               <div>
-                  <button>Edit</button>
-               </div>
-            </li>
-            <li>
-               <img src="/heading1.svg" alt="" />
-               <h2>nome da ong</h2>
-               <p>Estado da ong</p>
-               <span>Area de atuação</span>
-               <div>
-                  <button>Edit</button>
-               </div>
-            </li>
-            <li>
-               <img src="/heading1.svg" alt="" />
-               <h2>nome da ong</h2>
-               <p>Estado da ong</p>
-               <span>Area de atuação</span>
-               <div>
-                  <button>Edit</button>
-               </div>
-            </li>
-            <li>
-               <img src="/heading1.svg" alt="" />
-               <h2>nome da ong</h2>
-               <p>Estado da ong</p>
-               <span>Area de atuação</span>
-               <div>
-                  <button>Edit</button>
-               </div>
-            </li>
-            <li>
-               <img src="/heading1.svg" alt="" />
-               <h2>nome da ong</h2>
-               <p>Estado da ong</p>
-               <span>Area de atuação</span>
-               <div>
-                  <button>Edit</button>
-               </div>
-            </li>
-            <li>
-               <img src="/heading1.svg" alt="" />
-               <h2>nome da ong</h2>
-               <p>Estado da ong</p>
-               <span>Area de atuação</span>
-               <div>
-                  <button>Edit</button>
-               </div>
-            </li>
-            <li>
-               <img src="/heading1.svg" alt="" />
-               <h2>nome da ong</h2>
-               <p>Estado da ong</p>
-               <span>Area de atuação</span>
-               <div>
-                  <button>Edit</button>
-               </div>
-            </li>
-            <li>
-               <img src="/heading1.svg" alt="" />
-               <h2>nome da ong</h2>
-               <p>Estado da ong</p>
-               <span>Area de atuação</span>
-               <div>
-                  <button>Edit</button>
-               </div>
-            </li>
-          </ul>
+        <OngList/>
+        <ModalAdmin/>
       </ContainerAdminDash>
     </div>
   );

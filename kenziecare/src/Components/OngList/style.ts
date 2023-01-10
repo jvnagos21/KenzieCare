@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
-export const ContainerAdminDash = styled.div`
+export const StyledOngList = styled.ul`
 
     display: flex;
-    justify-content: center;
     align-items: center;
 
     width: 100%;
@@ -72,7 +71,7 @@ export const ContainerAdminDash = styled.div`
         color: #333333;
     }
 
-    .containerHeader{
+    div{
         display: flex;
         justify-content: flex-end;
 

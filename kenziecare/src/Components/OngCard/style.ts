@@ -1,32 +1,8 @@
 import styled from "styled-components";
 
-export const ContainerAdminDash = styled.div`
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 100%;
-    height: 100vh;
-
-    background-color: #5271ff;
-    background-image: url(/Logo.png);
+export const StyledOngCard = styled.li`
 
 
-    ul {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-
-        gap: 50px;
-        
-        max-width: 100%;
-
-        overflow-x: auto;
-
-    }
-    li{
         display: flex;
         flex-direction: column;
         flex-shrink: 0;
@@ -40,13 +16,12 @@ export const ContainerAdminDash = styled.div`
         margin-top: 1rem;
         margin-bottom: 1rem;
 
-    }
-    li img{
+    img{
         width: 100%;
         height: 200px;
     }
 
-    li h2 {
+    h2 {
         margin-top: 16px;
         margin-left: 16px;
 
@@ -55,7 +30,7 @@ export const ContainerAdminDash = styled.div`
 
         color: #333333;
     }
-    li p{
+    p{
         margin-left: 16px;
 
         font-weight: 400;
@@ -63,7 +38,7 @@ export const ContainerAdminDash = styled.div`
 
         color: #333333;
     }
-    li span{
+    span{
         margin-left: 16px;
 
         font-weight: 400;
@@ -72,31 +47,21 @@ export const ContainerAdminDash = styled.div`
         color: #333333;
     }
 
-    .containerHeader{
+    div{
         display: flex;
         justify-content: flex-end;
 
         width: 100%;
     }
 
+    
     button{
         margin-bottom: 20px;
     }
-    
+
     @media (min-width: 1024px){
-        overflow: hidden;
-        height: 100vh;
+
+        height: 400px;
         
-        ul{
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-items: unset;
-
-
-        }
-        li{
-            height: 400px;
-        }
     }
-
 `

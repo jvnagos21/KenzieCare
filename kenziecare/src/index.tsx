@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { GlobalStyle } from './Style/global';
+import UserProvider from './Context/UserContext';
 
 
 const root = ReactDOM.createRoot(
@@ -12,7 +13,9 @@ root.render(
   <React.StrictMode>
     <Router>
       <GlobalStyle/>
-      <App />
+      <UserProvider>
+        <App />
+      </UserProvider>
     </Router>
   </React.StrictMode>
 );

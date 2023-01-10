@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom"
-import AdminDash from "../Pages/AdminDash/index"
+import AdminDash from "../Pages/AdminDash"
 import LandingPage from "../Pages/LandingPage"
 import LoginPage from "../Pages/LoginPage"
 import OngProfile from "../Pages/OngProfile"
