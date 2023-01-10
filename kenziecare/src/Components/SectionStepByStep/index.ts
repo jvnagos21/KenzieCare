@@ -66,7 +66,7 @@ export const FigureSecundary = styled.figure`
   img {
     width: 180px;
     position: absolute;
-    top: -40px;
+    top: -10px;
     left: 35px;
   }
 `
