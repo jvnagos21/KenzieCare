@@ -23,7 +23,7 @@ export const RegisterSchema = yup.object().shape({
     )
     .min(8, "É necessário ter no mínimo 8 dígitos."),
 
-  confirmPassword: yup
+    confirmPassword: yup
       .string()
       .oneOf([yup.ref("password"), null], "Digite a mesma senha !")
 });
