@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { UserContext } from "../../Context/UserContext";
-import { iLoginFormValues } from "../../Pages/LoginPage/@types";
 import { StyledModal } from "./style";
 
 export interface iModalFormValues {
   imagem: string;
-  nome: string;
+  name: string;
   estado: string;
   areaAtuacao: string;
   id: number;
@@ -42,7 +41,7 @@ const ModalAdmin = () => {
               <input
                 type="text"
                 placeholder="Edite o nome da ONG"
-                {...register("nome")}
+                {...register("name")}
               />
               <input
                 type="text"

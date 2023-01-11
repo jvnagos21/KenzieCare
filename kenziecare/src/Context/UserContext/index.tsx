@@ -35,6 +35,8 @@ type userContextProps = {
   logoutAdmin: () => void
   setTechId: React.Dispatch<React.SetStateAction<number | null>>;
   techId: number | null;
+  loading: boolean;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const UserContext = createContext<userContextProps>({} as userContextProps);
 
@@ -43,6 +45,7 @@ const UserContext = createContext<userContextProps>({} as userContextProps);
   const [ong, setOng] = useState<iOngs[] | []>([])
   const [showModal, setShowModal] = useState(false)
   const [techId, setTechId] = useState<number | null>(null)
+  const [loading, setLoading] = useState(false)
   const navigate = useNavigate()  
 
   console.log(ong)
@@ -132,7 +135,7 @@ const UserContext = createContext<userContextProps>({} as userContextProps);
   }, []);  
   const editOngs = async (id: number | null,formData: iModalFormValues) => {
     console.log(formData)
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluMkBtYWlsLmNvbSIsImlhdCI6MTY3MzM3NTAwNSwiZXhwIjoxNjczMzc4NjA1LCJzdWIiOiI2In0.fRTyFX0ZhmWnSYCitrmoDERP30zdRcjudWrbiXiKF64"
+    const token = localStorage.getItem("@token")
     try {
       const response = await api.patch(`/ONGs/${id}`, formData,{
         headers: {
@@ -152,7 +155,7 @@ const UserContext = createContext<userContextProps>({} as userContextProps);
   }
 
   return (
-    <UserContext.Provider value={{ user, logout , userLogin, userRegister, ong, setOng, showModal, setShowModal, editOngs, logoutAdmin, setTechId, techId}}>
+    <UserContext.Provider value={{ user, logout , userLogin, userRegister, ong, setOng, showModal, setShowModal, editOngs, logoutAdmin, setTechId, techId, loading, setLoading}}>
       {children}
     </UserContext.Provider>
   );
