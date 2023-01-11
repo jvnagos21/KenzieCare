@@ -10,6 +10,7 @@ import { ContainerAdminDash } from "./style";
 const AdminDash = () => {
 
    const { showModal, logoutAdmin } = useContext(UserContext) 
+
   return (
     <div>
       <HeaderAdmin>
@@ -20,7 +21,9 @@ const AdminDash = () => {
       </HeaderAdmin>
       <ContainerAdminDash>
         <OngList/>
-        <ModalAdmin/>
+        {showModal && (
+          <ModalAdmin/>
+        )}
       </ContainerAdminDash>
     </div>
   );

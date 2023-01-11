@@ -29,8 +29,8 @@ type userContextProps = {
   logout: () => void
   ong: iOngs[] | []
   setOng: React.Dispatch<React.SetStateAction<iOngs[] | []>>  
-  showModal: boolean;
-  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+  showModal: iOngs | null;
+  setShowModal: React.Dispatch<React.SetStateAction<iOngs | null>>;
   editOngs: (id: number | null, formData: iModalFormValues) => void;
   logoutAdmin: () => void
   setTechId: React.Dispatch<React.SetStateAction<number | null>>;
@@ -43,12 +43,11 @@ const UserContext = createContext<userContextProps>({} as userContextProps);
   const UserProvider = ({ children }: iChildren) => {
   const [user, setUser] = useState<iUser>({} as iUser);
   const [ong, setOng] = useState<iOngs[] | []>([])
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState<iOngs | null>(null)
   const [techId, setTechId] = useState<number | null>(null)
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()  
 
-  console.log(ong)
   // useEffect(() => {
   //   async function autoLogin() {
   //     const getToken = localStorage.getItem("@token");
@@ -135,6 +134,7 @@ const UserContext = createContext<userContextProps>({} as userContextProps);
   }, []);  
   const editOngs = async (id: number | null,formData: iModalFormValues) => {
     console.log(formData)
+    console.log(id)
     const token = localStorage.getItem("@token")
     try {
       const response = await api.patch(`/ONGs/${id}`, formData,{
@@ -142,7 +142,15 @@ const UserContext = createContext<userContextProps>({} as userContextProps);
           Authorization: `Bearer ${token}`
         }
       })
-      setTechId(null)
+      const newOngs = ong.map((o) => {
+        if(o.id === id){
+          return response.data
+        }else{
+          return o
+        }
+      })
+      setOng(newOngs)
+      setShowModal(null)
     } catch (error) {
       console.log(error)
     }

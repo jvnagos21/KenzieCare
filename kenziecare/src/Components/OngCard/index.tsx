@@ -1,21 +1,14 @@
 import { useContext } from "react";
-import { UserContext } from "../../Context/UserContext";
+import { iOngs, UserContext } from "../../Context/UserContext";
 
 interface iOngCardProps {
-  ong: iOng;
+  ong: iOngs
 }
 
-interface iOng {
-  userId?: number;
-  name: string;
-  estado: string;
-  areaAtuacao: string;
-  imagem: string;
-  id: number;
-  descricao?: string;
-}
+
 
 const OngCard = ({ ong }: iOngCardProps) => {
+
   const { setShowModal, setTechId } = useContext(UserContext);
 
   return (
@@ -28,7 +21,7 @@ const OngCard = ({ ong }: iOngCardProps) => {
         <button
           type="submit"
           onClick={() => {
-            setShowModal(true);
+            setShowModal(ong);
             setTechId(ong.id);
           }}
         >
