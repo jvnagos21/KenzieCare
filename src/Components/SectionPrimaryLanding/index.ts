@@ -54,7 +54,7 @@ export const DivAnimation = styled.div`
     top: -135px;
     right: 150px;
     border-radius: 10%;
-    box-shadow: 0 0 15px 0 #f5fffb;
+    box-shadow: 0 0 20px 0 #f5fffb;
     
   }
 
@@ -63,7 +63,7 @@ export const DivAnimation = styled.div`
       opacity: 1;
     }
     17% {
-      opacity: 1;
+      opacity: 0;
     }
     25% {
       opacity: 0;
@@ -77,26 +77,26 @@ export const DivAnimation = styled.div`
   }
 
   img:nth-of-type(1) {
-    animation-delay: 12s;
-  }
-  img:nth-of-type(2) {
-    animation-delay: 9s;
-  }
-  img:nth-of-type(3) {
-    animation-delay: 6s;
-  }
-  img:nth-of-type(4) {
     animation-delay: 3s;
   }
+  img:nth-of-type(2) {
+    animation-delay: 6s;
+  }
+  img:nth-of-type(3) {
+    animation-delay: 9s;
+  }
+  img:nth-of-type(4) {
+    animation-delay: 12s;
+  }
   img:nth-of-type(5) {
-    animation-delay: 0;
+    animation-delay: 15s;
   }
 
   img {
     animation-name: divImgLanding;
-    animation-timing-function: ease-in-out;
+    /* animation-timing-function: ease-in-out; */
     animation-iteration-count: infinite;
-    animation-duration: 12s;
+    animation-duration: 15s;
     animation-direction: alternate;
   }
 `;

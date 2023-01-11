@@ -5,13 +5,20 @@ import { iLoginFormValues } from "./@types";
 import { LoginSchema } from "./LoginSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Header } from "../../Components/Header";
-import { ButtonFormStyled, ClickLogo, FormStyled, LinkToLandingPage, MainStyled, SpanFormStyled, TitleForm } from "../../Components/Form";
-import { LinkTo } from "../../Components/LinkToRegisterPage";
+import {
+  ButtonFormStyled,
+  ClickLogo,
+  FormStyled,
+  LinkToLandingPage,
+  MainStyled,
+  SpanFormStyled,
+  TitleForm,
+} from "../../Components/Form";
+import { LinkTo } from "../../Components/Links/LinkToRegisterPage";
 import { UserContext } from "../../Context/UserContext";
 
 const LoginPage = () => {
-  const [loading, setLoading] = useState(false);
-  const { userLogin } = useContext(UserContext);
+  const { userLogin, setLoading, loading } = useContext(UserContext);
 
   const {
     register,
