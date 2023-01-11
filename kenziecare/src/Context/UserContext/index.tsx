@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -23,7 +23,6 @@ export interface iOngs{
   descricao: string;
 }
 type userContextProps = {
-<<<<<<< HEAD
   userRegister: (formData: iRegisterFormValues, setLoading: React.Dispatch<React.SetStateAction<boolean>>) => void
   userLogin: (formData: iLoginFormValues, setLoading: React.Dispatch<React.SetStateAction<boolean>>) => void
   user: iUser
@@ -37,35 +36,14 @@ type userContextProps = {
   setTechId: React.Dispatch<React.SetStateAction<number | null>>;
   techId: number | null;
 }
-=======
-  userRegister: (
-    formData: iRegisterFormValues,
-    setLoading: React.Dispatch<React.SetStateAction<boolean>>
-  ) => Promise<void>;
-  userLogin: (
-    formData: iLoginFormValues,
-    setLoading: React.Dispatch<React.SetStateAction<boolean>>
-  ) => void;
-  user: iUser;
-  logout: () => void;
-  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
-  loading: boolean;
-};
-
->>>>>>> 8fb19f88bc56e27cf3043fad8e9f05c31580498b
 const UserContext = createContext<userContextProps>({} as userContextProps);
 
   const UserProvider = ({ children }: iChildren) => {
   const [user, setUser] = useState<iUser>({} as iUser);
-<<<<<<< HEAD
   const [ong, setOng] = useState<iOngs[] | []>([])
   const [showModal, setShowModal] = useState(false)
   const [techId, setTechId] = useState<number | null>(null)
   const navigate = useNavigate()  
-=======
-  const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
->>>>>>> 8fb19f88bc56e27cf3043fad8e9f05c31580498b
 
   console.log(ong)
   // useEffect(() => {
@@ -139,7 +117,6 @@ const UserContext = createContext<userContextProps>({} as userContextProps);
     }
   };
 
-<<<<<<< HEAD
   useEffect(() => {
     const Ongs = async () => {
 
@@ -176,12 +153,6 @@ const UserContext = createContext<userContextProps>({} as userContextProps);
 
   return (
     <UserContext.Provider value={{ user, logout , userLogin, userRegister, ong, setOng, showModal, setShowModal, editOngs, logoutAdmin, setTechId, techId}}>
-=======
-  return (
-    <UserContext.Provider
-      value={{ user, logout, userLogin, userRegister, setLoading, loading }}
-    >
->>>>>>> 8fb19f88bc56e27cf3043fad8e9f05c31580498b
       {children}
     </UserContext.Provider>
   );
