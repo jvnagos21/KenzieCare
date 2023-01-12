@@ -1,36 +1,35 @@
 import React from "react";
 
 export interface iChildren {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }
 
-
 export interface iUserLoginResponse {
-    accessToken: string;
-    user: iUserLogin ;
+  accessToken: string;
+  user: iUserLogin;
 }
 
 export interface iUserLogin {
-    email: string;
-    id: number;
-    nome: string;
-    foto: string;
-    is_admin?: boolean;
+  email: string;
+  id: number;
+  nome: string;
+  foto: string;
+  is_admin?: boolean;
 }
 
 export interface iUserRegisterResponse {
-    accessToken: string;
-    user: iUserRegister;
+  accessToken: string;
+  user: iUserRegister;
 }
 
 export interface iUserRegister {
-    email: string;
-    nome: string;
-    foto: string;
-    id: number;
+  email: string;
+  nome: string;
+  foto: string;
+  id: number;
 }
 
 export interface iUser {
-    email: string;
-    id: number;
+  email: string;
+  id: number;
 }

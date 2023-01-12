@@ -8,7 +8,33 @@ import "swiper/css/pagination";
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper";
 import { CardStyle, MainStyle } from "./style";
+import Modal from "react-modal";
+import { ModalUserStyle } from "../ModalUser/style";
+
+Modal.setAppElement("#root");
+
 export function MainUser() {
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  function handleOpenModal() {
+    setIsOpen(true);
+  }
+
+  function handleCloseModal() {
+    setIsOpen(false);
+  }
+
+  const customStyle = {
+    content: {
+      top: "20%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+    },
+  };
+
   interface iOngs {
     userId: number;
     name: string;
@@ -49,14 +75,25 @@ export function MainUser() {
       >
         {ongs.map((ong: iOngs, key) => {
           return (
-            <SwiperSlide>
-              <CardStyle>
-                <img src={ong.imagem} alt="imagem da ong" />
-                <h1>{ong.name}</h1>
-                <p>{ong.descricao}</p>
-                <button>Doe agora</button>
-              </CardStyle>
-            </SwiperSlide>
+            <ModalUserStyle>
+              <SwiperSlide>
+                <CardStyle>
+                  <img src={ong.imagem} alt="imagem da ong" />
+                  <h1>{ong.name}</h1>
+                  <p>{ong.descricao}</p>
+                  <button onClick={handleOpenModal}>Doe agora</button>
+                </CardStyle>
+                <Modal
+                  isOpen={modalIsOpen}
+                  onRequestClose={handleCloseModal}
+                  style={customStyle}
+                >
+                  <p>Digite o valor da sua doação</p>
+                  <input type="number" placeholder="R$" />
+                  <button onClick={handleCloseModal}>Enviar</button>
+                </Modal>
+              </SwiperSlide>
+            </ModalUserStyle>
           );
         })}
       </Swiper>
