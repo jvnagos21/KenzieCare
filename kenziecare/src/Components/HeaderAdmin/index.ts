@@ -22,5 +22,16 @@ export const HeaderAdmin = styled.header`
         width: 150px;
         height: 60px;
     }
-    
+    button{
+        width: 60px;
+        height: 28px;
+
+        margin-right: 20px;
+
+        background-color: #5271FF;
+        color: white;
+
+        border: 1px solid #5271FF;
+        border-radius: 4px;
+    }
 `

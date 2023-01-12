@@ -7,12 +7,14 @@ export interface iChildren {
 
 export interface iUserLoginResponse {
     accessToken: string;
-    user: iUserLogin;
+    user: iUserLogin ;
 }
 
 export interface iUserLogin {
     email: string;
     id: number;
+    nome: string;
+    foto: string;
     is_admin?: boolean;
 }
 

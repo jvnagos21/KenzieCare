@@ -1,11 +1,11 @@
-import { Navigate, Route, Routes } from "react-router-dom";
-import AdminDash from "../Pages/AdminDash";
-import LandingPage from "../Pages/LandingPage";
-import LoginPage from "../Pages/LoginPage";
-import OngProfile from "../Pages/OngProfile";
-import RegisterPage from "../Pages/RegisterPage";
-import UserDash from "../Pages/UserDash";
-import UserProfile from "../Pages/UserProfile";
+import { Navigate, Route, Routes } from "react-router-dom"
+import AdminDash from "../Pages/AdminDash"
+import LandingPage from "../Pages/LandingPage"
+import LoginPage from "../Pages/LoginPage"
+import OngProfile from "../Pages/OngProfile"
+import RegisterPage from "../Pages/RegisterPage"
+import UserDash from "../Pages/UserDash"
+import UserProfile from "../Pages/UserProfile"
 
 export const RoutesComponent = () => {
   return (

@@ -76,6 +76,16 @@ const RegisterPage = () => {
                 error={errors?.email && "Esse email já existe !"}
               />
               <InputForm
+                id="foto"
+                type="text"
+                key="foto"
+                label="Foto"
+                placeholder="Escolha sua foto"
+                register={register("foto")}
+                disabled={loading}
+                error={errors?.foto ? "Escolha uma foto melhor" : ""}
+              />
+              <InputForm
                 id="password"
                 type="password"
                 key="password"
