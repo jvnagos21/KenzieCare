@@ -6,6 +6,7 @@ import { iModalFormValues } from "../../Components/Modal";
 import { iLoginFormValues } from "../../Pages/LoginPage/@types";
 import { iRegisterFormValues } from "../../Pages/RegisterPage/@types";
 import { api } from "../../Service/api";
+
 import {
   iChildren,
   iUser,
@@ -48,32 +49,7 @@ const UserContext = createContext<userContextProps>({} as userContextProps);
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()  
 
-  // useEffect(() => {
-  //   async function autoLogin() {
-  //     const getToken = localStorage.getItem("@token");
-  //       if(getToken){
-  //         try {
-  //           const response = await api.get("/login", {
-  //             headers: {
-  //               Authorization : `Bearer ${getToken}`
-  //             }
-  //           });
-  //           setUser(response.data);
-  //           navigate("/home")
-  //         } catch (error) {
-  //           console.log(error);
-  //           localStorage.removeItem("@token");
-  //           navigate("/");
-  //         }
-  //     } else {
-  //       navigate("/");
-  //     }
-  //   };
-  //   autoLogin();
-  // }, []);
-
   const logout = () => {
-    // setUser({});
     localStorage.removeItem("@token");
   };
 

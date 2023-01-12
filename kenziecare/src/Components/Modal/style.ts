@@ -56,5 +56,14 @@ export const StyledModal = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
+
+    }
+    .containerButton button{
+        background-color: white;
+        color: #5271FF;
+
+        width: 80px;
+
+        font-weight: 700;
     }
 `
