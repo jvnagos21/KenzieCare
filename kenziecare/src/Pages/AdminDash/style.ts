@@ -98,28 +98,36 @@ export const ContainerAdminDash = styled.div`
     
     @media (min-width: 1024px){
         overflow: hidden;
-        height: 100vh;
+        height: 150vh;
         
         ul{ 
-            width: 95%;
+            width: 100%;
 
             margin: 0 auto;
 
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
 
 
             overflow-x: unset;
+
+            margin-left: 20px;
+            margin-right: 20px;
 
 
         }
         li{
             height: 400px;
+            
         }
     }
     @media (min-width: 1440px){
+
+        height: 100vh;
         ul{
             grid-template-columns: repeat(4, 1fr);
+
+            overflow-x: unset;
         }
     }
 
