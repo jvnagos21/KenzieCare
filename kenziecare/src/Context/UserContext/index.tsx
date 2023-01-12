@@ -14,7 +14,7 @@ import {
   iUserRegisterResponse,
 } from "./@types";
 
-export interface iOngs{
+export interface iOngs {
   userId: number;
   name: string;
   estado: string;
@@ -24,30 +24,36 @@ export interface iOngs{
   descricao: string;
 }
 type userContextProps = {
-  userRegister: (formData: iRegisterFormValues, setLoading: React.Dispatch<React.SetStateAction<boolean>>) => void
-  userLogin: (formData: iLoginFormValues, setLoading: React.Dispatch<React.SetStateAction<boolean>>) => void
-  user: iUser
-  logout: () => void
-  ong: iOngs[] | []
-  setOng: React.Dispatch<React.SetStateAction<iOngs[] | []>>  
+  userRegister: (
+    formData: iRegisterFormValues,
+    setLoading: React.Dispatch<React.SetStateAction<boolean>>
+  ) => void;
+  userLogin: (
+    formData: iLoginFormValues,
+    setLoading: React.Dispatch<React.SetStateAction<boolean>>
+  ) => void;
+  user: iUser;
+  logout: () => void;
+  ong: iOngs[] | [];
+  setOng: React.Dispatch<React.SetStateAction<iOngs[] | []>>;
   showModal: iOngs | null;
   setShowModal: React.Dispatch<React.SetStateAction<iOngs | null>>;
   editOngs: (id: number | null, formData: iModalFormValues) => void;
-  logoutAdmin: () => void
+  logoutAdmin: () => void;
   setTechId: React.Dispatch<React.SetStateAction<number | null>>;
   techId: number | null;
   loading: boolean;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
-}
+};
 const UserContext = createContext<userContextProps>({} as userContextProps);
 
-  const UserProvider = ({ children }: iChildren) => {
+const UserProvider = ({ children }: iChildren) => {
   const [user, setUser] = useState<iUser>({} as iUser);
-  const [ong, setOng] = useState<iOngs[] | []>([])
-  const [showModal, setShowModal] = useState<iOngs | null>(null)
-  const [techId, setTechId] = useState<number | null>(null)
-  const [loading, setLoading] = useState(false)
-  const navigate = useNavigate()  
+  const [ong, setOng] = useState<iOngs[] | []>([]);
+  const [showModal, setShowModal] = useState<iOngs | null>(null);
+  const [techId, setTechId] = useState<number | null>(null);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const logout = () => {
     localStorage.removeItem("@token");
@@ -80,7 +86,9 @@ const UserContext = createContext<userContextProps>({} as userContextProps);
       setLoading(true);
       const response = await api.post<iUserLoginResponse>("/login", formData);
       setUser(response.data.user);
+      localStorage.clear();
       localStorage.setItem("@token", response.data.accessToken);
+      localStorage.setItem("userInfo", JSON.stringify(response.data.user));
       toast.success("Login efetuado com sucesso !");
       if (response.data.user.is_admin) {
         navigate("/admindash");
@@ -97,49 +105,62 @@ const UserContext = createContext<userContextProps>({} as userContextProps);
 
   useEffect(() => {
     const Ongs = async () => {
-
       try {
-        const response = await api.get("/ONGs")
-        setOng(response.data)
+        const response = await api.get("/ONGs");
+        setOng(response.data);
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
-  
-    }
-    Ongs()
-  }, []);  
-  const editOngs = async (id: number | null,formData: iModalFormValues) => {
-    console.log(formData)
-    console.log(id)
-    const token = localStorage.getItem("@token")
+    };
+    Ongs();
+  }, []);
+  const editOngs = async (id: number | null, formData: iModalFormValues) => {
+    console.log(formData);
+    console.log(id);
+    const token = localStorage.getItem("@token");
     try {
-      const response = await api.patch(`/ONGs/${id}`, formData,{
+      const response = await api.patch(`/ONGs/${id}`, formData, {
         headers: {
-          Authorization: `Bearer ${token}`
-        }
-      })
+          Authorization: `Bearer ${token}`,
+        },
+      });
       const newOngs = ong.map((o) => {
-        if(o.id === id){
-          return response.data
-        }else{
-          return o
+        if (o.id === id) {
+          return response.data;
+        } else {
+          return o;
         }
-      })
-      setOng(newOngs)
-      setShowModal(null)
+      });
+      setOng(newOngs);
+      setShowModal(null);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
   const logoutAdmin = () => {
-
-    localStorage.removeItem("@token")
-    navigate("/")
-
-  }
+    localStorage.removeItem("@token");
+    navigate("/");
+  };
 
   return (
-    <UserContext.Provider value={{ user, logout , userLogin, userRegister, ong, setOng, showModal, setShowModal, editOngs, logoutAdmin, setTechId, techId, loading, setLoading}}>
+    <UserContext.Provider
+      value={{
+        user,
+        logout,
+        userLogin,
+        userRegister,
+        ong,
+        setOng,
+        showModal,
+        setShowModal,
+        editOngs,
+        logoutAdmin,
+        setTechId,
+        techId,
+        loading,
+        setLoading,
+      }}
+    >
       {children}
     </UserContext.Provider>
   );
