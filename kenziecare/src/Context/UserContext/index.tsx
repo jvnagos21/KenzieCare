@@ -24,13 +24,9 @@ export interface iOngs {
   descricao: string;
 }
 type userContextProps = {
-  userRegister: (
-    formData: iRegisterFormValues,
-    setLoading: React.Dispatch<React.SetStateAction<boolean>>
+  userRegister: (formData: iRegisterFormValues, setLoading: React.Dispatch<React.SetStateAction<boolean>>
   ) => void;
-  userLogin: (
-    formData: iLoginFormValues,
-    setLoading: React.Dispatch<React.SetStateAction<boolean>>
+  userLogin: (formData: iLoginFormValues, setLoading: React.Dispatch<React.SetStateAction<boolean>>
   ) => void;
   user: iUser;
   logout: () => void;
@@ -65,7 +61,6 @@ const UserProvider = ({ children }: iChildren) => {
   ): Promise<void> => {
     try {
       const newData = { ...formData, is_admin: false };
-      console.log(newData);
       setLoading(true);
       await api.post<iUserRegisterResponse>("/register", newData);
       toast.success("Cadastro realizado com sucesso !");
@@ -115,8 +110,6 @@ const UserProvider = ({ children }: iChildren) => {
     Ongs();
   }, []);
   const editOngs = async (id: number | null, formData: iModalFormValues) => {
-    console.log(formData);
-    console.log(id);
     const token = localStorage.getItem("@token");
     try {
       const response = await api.patch(`/ONGs/${id}`, formData, {

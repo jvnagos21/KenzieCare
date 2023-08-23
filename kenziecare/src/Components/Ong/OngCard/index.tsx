@@ -1,14 +1,11 @@
 import { useContext } from "react";
-import { iOngs, UserContext } from "../../Context/UserContext";
+import { iOngs, UserContext } from "../../../Context/UserContext";
 
 interface iOngCardProps {
-  ong: iOngs
+  ong: iOngs;
 }
 
-
-
 const OngCard = ({ ong }: iOngCardProps) => {
-
   const { setShowModal, setTechId } = useContext(UserContext);
 
   return (

@@ -1,25 +1,25 @@
 import React from "react";
-import { DivLink, LinkToForm } from "../../Components/DivLinkToForm";
+import { DivLink, LinkToForm } from "../../Components/Form/DivLinkToForm";
 import { ClickLogo } from "../../Components/Form";
 import { Header } from "../../Components/Header";
-import {  BackGroundSecundary, MainLanding } from "../../Components/MainLanding";
+import {  BackGroundSecundary, MainLanding } from "../../Components/Main/MainLanding";
 import {
   DivAnimation,
   DivPrimaryStyled,
   SectionPrimaryStyled,
-} from "../../Components/SectionPrimaryLanding";
+} from "../../Components/Section/SectionPrimaryLanding";
 import {
   DivHowitWorksStyled,
   DivSecundaryStyled,
   IconPrimaryStyled,
   SectionSecundaryStyled,
-} from "../../Components/SectionSecundaryLanding";
+} from "../../Components/Section/SectionSecundaryLanding";
 import {
   DivFigureSteps,
   FigureSecundary,
   LineSteps,
   SectionStepbyStep,
-} from "../../Components/SectionStepByStep";
+} from "../../Components/Section/SectionStepByStep";
 
 const LandingPage = () => {
   return (

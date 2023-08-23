@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import axios from "axios";
 import "swiper/css";
@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from "swiper";
 import { CardStyle, MainStyle } from "./style";
 import Modal from "react-modal";
-import { ModalUserStyle } from "../ModalUser/style";
+import { ModalUserStyle } from "../../Modal/ModalUser/style";
 
 Modal.setAppElement("#root");
 

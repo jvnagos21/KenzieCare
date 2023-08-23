@@ -1,16 +1,14 @@
 import React from "react";
-import { BtnLogout } from "../../Components/BtnLogout";
+import { BtnLogout } from "../../Components/Button/ButtonLogout";
 import { ClickLogo } from "../../Components/Form";
-import HeaderUser from "../../Components/HeaderUser/index";
-import { MainUser } from "../../Components/MainUser";
-import { Userinfo } from "../../Components/Userinfo/index";
+import HeaderUser from "../../Components/Header/HeaderUser/index";
+import { MainUser } from "../../Components/Main/MainUser";
+import { Userinfo } from "../../Components/UserInfo/index";
 import Logout from "../../imgs/logout.svg";
 
 const usuario: any = localStorage.getItem("userInfo");
 const userTratado = JSON.parse(usuario);
 const UserDash = () => {
-  console.log(userTratado);
-
   return (
     <div>
       <HeaderUser>

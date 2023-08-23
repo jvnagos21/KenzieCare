@@ -1,15 +1,12 @@
 import React, { useContext } from "react";
-import { HeaderAdmin } from "../../Components/HeaderAdmin";
+import { HeaderAdmin } from "../../Components/Header/HeaderAdmin";
 import ModalAdmin from "../../Components/Modal";
-import OngList from "../../Components/OngList";
+import OngList from "../../Components/Ong/OngList";
 import { UserContext } from "../../Context/UserContext";
 import { ContainerAdminDash } from "./style";
 
-
-
 const AdminDash = () => {
-
-   const { showModal, logoutAdmin } = useContext(UserContext) 
+  const { showModal, logoutAdmin } = useContext(UserContext);
 
   return (
     <div>
@@ -20,10 +17,8 @@ const AdminDash = () => {
         </div>
       </HeaderAdmin>
       <ContainerAdminDash>
-        <OngList/>
-        {showModal && (
-          <ModalAdmin/>
-        )}
+        <OngList />
+        {showModal && <ModalAdmin />}
       </ContainerAdminDash>
     </div>
   );
